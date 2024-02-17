@@ -8,6 +8,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");//for express sessions, But it only for local projects and not production
 const MongoStore= require("connect-mongo");//this is used for production enviornment
 const flash = require("connect-flash");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 
 const passport = require("passport");
@@ -41,7 +42,7 @@ const users= require("./routes/user.js");
 
 const {reviewSchema}=require("./joi.js");
 const ejsMate = require('ejs-mate');
-const user = require("./models/user.js");
+const Contact = require("./models/contact.js");
 app.engine('ejs', ejsMate);
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
@@ -66,9 +67,7 @@ async function main() {
 
 }
 
-app.get("/", (req, res) => {
-  res.send("Request Send");
-});
+
 
 
 app.use(session(sessionOptions));
@@ -102,7 +101,23 @@ app.use("/courses/:id/reviews",reviews);
 app.use("/",users);
 
 
+app.get("/", (req, res) => {
+  res.render("home/home.ejs");
+});
 
+// contact
+app.get("/contact", (req, res) =>{
+  res.render("home/contact.ejs");
+  });
+
+app.post("/contact" ,async(req,res)=>{
+  
+  const newContact = new Contact(req.body.contact);
+  console.log(newContact);
+  await newContact.save();
+  req.flash("success","Contacted");
+  res.redirect("/");
+});
 // if the user sends a request to route which doesn't exist
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found"));

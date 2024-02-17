@@ -1,28 +1,26 @@
-<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/courses"><i class="fa-solid fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNavAltMarkup" >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- <a class="nav-link "  href="/">Home</a> -->
-          <a class="nav-link" href="/courses">Courses</a>
-         
-        </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/courses/new">Add New Courses</a>
+<nav class="navbar-section">
+  <div class="nav_container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="">Udemy</a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/contact">Contact Us</a></li>
           <% if (!currentUser) {%>
-            <a class="nav-link "  href="/signup">Sign Up</a>
-            <a class="nav-link" href="/login">Login</a>
+          <!-- <li><a href="/signup">Sign Up</a></li> -->
+          <li><a href="/login">Login</a></li>
+          <% } %> <% if (currentUser) {%>
+          <li><a href="/logout">Logout</a></li>
           <% } %>
-          <% if (currentUser) {%>
-            <a class="nav-link" href="/logout">Logout</a>
-          <% } %>
-         
-        </div>
+        </ul>
+      </div>
+      <div class="mobile-menu">
+        <i id="menu" class="fa-solid fa-bars"></i>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
