@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate") %>
+<!-- this is the boilerplate imported using ejs-mate -->
+<body>
+  <!-- <p><%= success %></p>  -->
+    <!-- <h1>All Listings</h1> -->
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listings</button>
+    </form> -->
+
+    
+<div class="row row-col-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for(let list of allCourses){   %>
+        <div class="card col" style="width: 20rem;">
+           <a href="/listings/<%= list._id %>" class="listing-link">
+             <img src="<%= list.image  %>" class="card-img-top"
+              alt="listing_img" style="height: 20rem">
+              <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <p class="card-text">
+               <b> <%= list.title %></b><br>
+                &#8377; <%= list.price %> /night
+              </p>
+            </div>
+           </a>
+
+        </div>
+            <% } %>
+</div>
+   
+
+
+
+
+</body>
