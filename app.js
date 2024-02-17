@@ -105,10 +105,16 @@ app.get("/", (req, res) => {
   res.render("home/home.ejs");
 });
 
+// about
+app.get("/about", (req, res) => {
+  res.render("home/about.ejs");
+});
+
 // contact
 app.get("/contact", (req, res) =>{
   res.render("home/contact.ejs");
   });
+
 
 app.post("/contact" ,async(req,res)=>{
   
