@@ -18,7 +18,7 @@ module.exports.signup=async (req, res) => {
         if (err) {
           return next(err);
         }
-        req.flash("success", " Welcome to Udemy");
+        req.flash("success", " Welcome to EduHub");
         res.redirect("/");
       });
   
@@ -35,14 +35,14 @@ module.exports.login=async (req, res) => {
 
     const registerUser = await User.findOne({ username: username });
     // console.log(registerUser);
-    req.flash("success", " Welcome to Wanderlust");
+    req.flash("success", " Welcome to EduHub");
     // rather than /listing  we will redirect to the page which gave login request
    
     if(res.locals.redirectUrl){
       
       res.redirect(res.locals.redirectUrl);
     }else{
-     res.redirect("/courses");
+     res.redirect("/");
     }
     
     // res.locals.redirectUrl is defined in Middleware.js
@@ -56,6 +56,6 @@ module.exports.logout= (req, res, next) => {
         return next(err);
       }
       req.flash("success", "You are Logged out");
-      res.redirect("/courses");
+      res.redirect("/");
     })
   }
