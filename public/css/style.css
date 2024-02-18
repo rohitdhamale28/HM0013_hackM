@@ -8,8 +8,7 @@ body{
 .container{
     flex: 1;
 }
-
-/* Navbar */
+   /* Navbar */
 .navbar{
     height: 5rem;
     background-color: rgb(0, 0, 0) !important;
@@ -27,7 +26,8 @@ body{
  /* important is used to override the bootstrap styling */
 }
 
-/* Footer */
+
+ /* Footer */
 .f-info-links , .f-info-socials, .f-info-brand{
     width: 100%;
 }
