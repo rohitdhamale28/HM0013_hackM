@@ -15,20 +15,30 @@ const passport = require("passport");
 const localStratergy = require("passport-local");
 const User= require("./models/user.js");
 
+const store= MongoStore.create({
+  mongoUrl: "mongodb+srv://rohitdhamale05:cM79cg.PxW9N7uz@cluster0.82ltj62.mongodb.net/",
+  crypto: {
+    secret:"jabvkjabn",
+  },
+  touchAfter: 24*60*60,//seesion time in sessions
+});
+
+store.on("error", ()=>{
+  console.log("Error in MONGO SESSION STORE", err);
+})
 
 
 const sessionOptions= { 
-// store,
-  // secret:process.env.SECRET,
-secret:"asdjcbdgthgs",
-resave: false, 
-saveUninitialized: true,
-cookie:{
-  expires: Date.now() +7*24*60*60*1000,//here we have set expiry time in milliseconds
-  maxAge: 7*24*60*60*1000,//
-  httpOnly: true,
-}, };
-
+  store,
+    secret:"jabvkjabn",
+  resave: false, 
+  saveUninitialized: true,
+  cookie:{
+    expires: Date.now() +7*24*60*60*1000,//here we have set expiry time in milliseconds
+    maxAge: 7*24*60*60*1000,//
+    httpOnly: true,
+  }, };
+  
 
 
 // all the courses route are stored in this file
