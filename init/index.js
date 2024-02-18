@@ -34,7 +34,7 @@ main()
     await Course.deleteMany({});
     // map() function is used to make changes , it actually creates a new array rather than making changes
     // here we are adding a owner to every Course , owner is 'rohit' with object_id '65a10de59f406151d2b192df' from users collection
-     initData.data= initData.data.map((obj)=> ({...obj, owner: '65d071f549f3f3140af32675'}));
+     initData.data= initData.data.map((obj)=> ({...obj, owner: '65d0fe19f18b4859e952361c'}));
     await Course.insertMany(initData.data);
     console.log("data Initiallised");
  }

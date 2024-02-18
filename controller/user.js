@@ -8,8 +8,8 @@ const User = require("../models/user.js");
 
 module.exports.signup=async (req, res) => {
     try {
-      let { username, email, password } = req.body;
-      const newUser = new User({ email, username });
+      let { username, email,type, password } = req.body;
+      const newUser = new User({ email,type, username });
       const registerUser = await User.register(newUser, password);
       //  console.log(registerUser);
   
@@ -18,8 +18,8 @@ module.exports.signup=async (req, res) => {
         if (err) {
           return next(err);
         }
-        req.flash("success", " Welcome to Wanderlust");
-        res.redirect("/courses");
+        req.flash("success", " Welcome to Udemy");
+        res.redirect("/");
       });
   
     }
@@ -37,12 +37,14 @@ module.exports.login=async (req, res) => {
     // console.log(registerUser);
     req.flash("success", " Welcome to Wanderlust");
     // rather than /listing  we will redirect to the page which gave login request
+   
     if(res.locals.redirectUrl){
+      
       res.redirect(res.locals.redirectUrl);
     }else{
      res.redirect("/courses");
     }
-
+    
     // res.locals.redirectUrl is defined in Middleware.js
   //  saveRedirectUrl is also defined in middleware.js
 };
