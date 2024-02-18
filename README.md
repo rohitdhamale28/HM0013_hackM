@@ -1,6 +1,8 @@
 
 Higher Education Exploration Platform
 
+Website Link : https://eduhub-r954.onrender.com
+
 Overview:
 The Higher Education Exploration Platform is a user-friendly, centralized hub designed to simplify and enhance the higher education exploration process for students. It serves as a comprehensive repository of information on universities, courses, admission processes, faculty details, alumni experiences, career paths, and employer partnerships. The platform includes features such as filters, direct communication with university representatives, and a bookmarking system to streamline the application process and support students in their pursuit of academic and career success.
 University and Course Database: Access detailed profile of courses, including accreditation, rankings, program structure.
