@@ -30,6 +30,12 @@ Make your changes and commit them: git commit -am 'Add new feature'.
 Push to the branch: git push origin feature/my-feature.
 Submit a pull request.
 
+website handling:
+1.first sign up .
+2.you can add new course to the website,means u can become a instructor.
+3.you can view the courses which you like and fill the contact us form to select a particular course.
+
+
 
 
 
