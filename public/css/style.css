@@ -8,23 +8,30 @@ body{
 .container{
     flex: 1;
 }
-   /* Navbar */
-.navbar{
+ /* Navbar */
+.navbar {
     height: 5rem;
-    background-color: rgb(0, 0, 0) !important;
+    background-color: #000000 !important; /* Dark background color */
 }
-.navbar_heading{
-    color: #ffffff !;
+.navbar-brand{
+    margin-left: 35px !important;
 }
-.fa-compass{
-    color: #ffffff;
+ .right{
+    margin-right: 40px;
+ }
+.navbar_heading {
+    color: #ffffff !important; /* White text color */
+}
+
+.fa-compass {
+    color: #ffffff; /* White icon color */
     font-size: 2rem;
 }
 
-.nav-link{
- color: #ffffff !important;
- /* important is used to override the bootstrap styling */
+.nav-link {
+    color: #ffffff !important; /* White text color */
 }
+
 
 
  /* Footer */
