@@ -24,7 +24,7 @@ main()
 // used to form a connection
  async function main(){
  // this is to connect with local 
-  await mongoose.connect("mongodb+srv://rohitdhamale05:cM79cg.PxW9N7uz@cluster0.82ltj62.mongodb.net/");
+  await mongoose.connect("mongodb://127.0.0.1:27017/eduhub");
 // this is to connect with Mongodb Atlas 
 // await mongoose.connect(dbURL);
  }
