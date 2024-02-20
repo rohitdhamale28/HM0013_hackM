@@ -15,21 +15,21 @@ const passport = require("passport");
 const localStratergy = require("passport-local");
 const User= require("./models/user.js");
 
-const store= MongoStore.create({
-  mongoUrl: "",
-  crypto: {
-    secret:"jabvkjabn",
-  },
-  touchAfter: 24*60*60,//seesion time in sessions
-});
+// const store= MongoStore.create({
+//   mongoUrl: "",
+//   crypto: {
+//     secret:"jabvkjabn",
+//   },
+//   touchAfter: 24*60*60,//seesion time in sessions
+// });
 
-store.on("error", ()=>{
-  console.log("Error in MONGO SESSION STORE", err);
-})
+// store.on("error", ()=>{
+//   console.log("Error in MONGO SESSION STORE", err);
+// })
 
 
 const sessionOptions= { 
-  store,
+  // store,
     secret:"jabvkjabn",
   resave: false, 
   saveUninitialized: true,
